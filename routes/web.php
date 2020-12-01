@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('validation');
+});
+
+Route::prefix('/login')->group (function(){
+    Route::view('/', 'login')->name('login');
 });
