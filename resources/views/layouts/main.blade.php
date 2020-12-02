@@ -4,8 +4,7 @@
   <x-header />
 
   <div class="container-fluid">
-    <div class="row">
-        <x-sidebar/>
+    <div class="row d-flex justify-content-center">
       @yield('content.main')
     </div>
   </div>

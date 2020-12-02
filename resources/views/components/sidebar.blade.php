@@ -3,19 +3,25 @@
   <a href="#">
     <div class="row">
         <img src="{{ asset('images/icono.png') }}"  class="img-fluid icono-menu" alt="img">
-        <h5 class="title2-text">Home</h5>
+        <h5 class="title2-text">Presidentes</h5>
     </div>
   </a>
   <a href="#">
     <div class="row">
-        <img src="{{ asset('images/friends1.png') }}"  class="img-fluid icono-menu" alt="img">
-        <h5 class="title2-text">Amigos</h5>
+        <img src="{{ asset('images/icono.png') }}"  class="img-fluid icono-menu" alt="img">
+        <h5 class="title2-text">Alcades</h5>
     </div>
   </a>
   <a href="#">
     <div class="row">
-        <img src="{{ asset('images/logout1.png') }}"  class="img-fluid icono-menu" alt="img">
-        <h5 class="title2-text">Cerrar Sesión</h5>
+        <img src="{{ asset('images/icono.png') }}"  class="img-fluid icono-menu" alt="img">
+        <h5 class="title2-text">Senadores</h5>
+    </div>
+  </a>
+  <a href="#">
+    <div class="row">
+        <img src="{{ asset('images/icono.png') }}"  class="img-fluid icono-menu" alt="img">
+        <h5 class="title2-text">Diputados</h5>
     </div>
   </a>
 </div>

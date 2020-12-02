@@ -11,7 +11,16 @@
   <div class="container">
     <div class="row content">
       <div class="col-md-12 align-self-center text-center ">
-        <h2 class="primary-color">Bienvenido a ITLA VOTING</h2>
+        <h2 class="primary-color title1-text">Bienvenido a ITLA VOTING</h2>
+        <!--ALERTA-->        
+        <!--<div class="alert alert-danger">Ya ha ejercido el voto</div>-->
+        
+        <!--ALERTA-->
+        <!--<div class="alert alert-danger">No hay ningun proceso electoral en estos momentos"</div>-->
+
+        <!--ALERTA-->
+        <!--<div class="alert alert-danger">El ciudadano está inactivo"</div>-->
+
         <h5 class="title2-text">Escribe tu cédula</h5>
         <form class="needs-validation" novalidate>
           <div class="form-group">
@@ -25,14 +34,10 @@
     </div>
   </div>
   <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {
       'use strict';
-
       window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
         var validation = Array.prototype.filter.call(forms, function(form) {
           form.addEventListener('submit', function(event) {
 

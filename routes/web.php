@@ -20,3 +20,8 @@ Route::get('/', function () {
 Route::prefix('/login')->group (function(){
     Route::view('/', 'login')->name('login');
 });
+
+Route::prefix('/home')->group (function(){
+    Route::view('/', 'home')->name('home');
+});
+

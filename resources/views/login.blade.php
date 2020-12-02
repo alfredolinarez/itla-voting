@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row content">
       <div class="col-md-6 mb-3 align-self-center text-center">
-        <img src="#" class="img-fluid" alt="img">
+        <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="img">
       </div>
       <div class="col-md-6">
         <h3 class="title1-text mb-3 primary-color text-center">¡Bienvenido!</h3>

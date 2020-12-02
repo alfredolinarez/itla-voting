@@ -11,6 +11,7 @@ body{
     color: #000;
     text-decoration: none;
 }
+/*Validation*/
 .text-cedula{
     display:block;
     text-align: center;
@@ -35,7 +36,6 @@ body{
     outline: 0;
     box-shadow: none;
 }
-/*Registro y Login*/
 .content{
     margin: 8%;
     background-color: #fff;
@@ -115,16 +115,19 @@ header{
     z-index: 100;
     width: 100%;
 }
+.img-home{
+    width:150px;
+    margin-bottom:10px;
+}
 .img-opciones{
     margin-right: 50px;
     margin-left: 50px;
 }
-.caja-agregar{
-    margin: 20px 10px 20px 0px;
-    padding:20px;
-    background: #fff;
-    box-shadow: 0 0 5px 5px rgba(0, 0, 0, .05);
-    position: relative;
+.disponible{
+    color: green;
+}
+.no-disponible{
+    color: red;
 }
 .btn-group-sm>.btn, .btn-sm{
     padding: .1rem .5rem .1rem 0.35rem;
