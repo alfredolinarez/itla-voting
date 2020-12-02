@@ -119,6 +119,10 @@ header{
     width:150px;
     margin-bottom:10px;
 }
+.img-candidates{
+    width:100px;
+    margin-bottom:10px;
+}
 .img-opciones{
     margin-right: 50px;
     margin-left: 50px;
@@ -166,32 +170,11 @@ header{
     font-size: 13px;
     display: inline;
 }
-/*SIDEBAR-MENU*/
-.sidebar-menu{
-    padding-left:60px;
-    padding-bottom: 30px;
-}
-.sidebar-menu .row{
-    margin-bottom: 40px;
-}
-.sidebar-menu .row h5{
-    margin-top: 5px;
-    margin-bottom: 0px;
+.bloque-candidato{
+    margin-top:20px;
 }
 .icono-menu{
     width: 25px;
     height: 25px;
     margin-right: 15px;
-}
-
-/*SIDEBAR-PERFIl*/
-.sidebar-perfil{
-    margin-top: 20px;
-}
-
-/*CAJA-LISTADO*/
-.caja-listado-amigos{
-    margin-right:10px;
-    padding: 5px 5px 0px 5px;
-    position: relative;
 }

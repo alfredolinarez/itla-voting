@@ -25,3 +25,7 @@ Route::prefix('/home')->group (function(){
     Route::view('/', 'home')->name('home');
 });
 
+Route::prefix('/candidatos')->group (function(){
+    Route::view('/', 'candidatos')->name('candidatos');
+});
+
