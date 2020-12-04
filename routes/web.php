@@ -29,3 +29,11 @@ Route::prefix('/candidatos')->group (function(){
     Route::view('/', 'candidatos')->name('candidatos');
 });
 
+Route::prefix('/homeadministrator')->group (function(){
+    Route::view('/', 'homeadministrator')->name('homeadministrator');
+});
+
+Route::prefix('/crudcandidatos')->group (function(){
+    Route::view('/', 'crudcandidatos')->name('crudcandidatos');
+});
+

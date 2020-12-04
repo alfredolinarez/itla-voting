@@ -96,7 +96,7 @@ body{
     text-align: center;
 }
 .btn-class{
-    width: 100px;
+    width: auto;
     background-color: #fff;
     border-color: #565ec4;
     color: #565ec4;

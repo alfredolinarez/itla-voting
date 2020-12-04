@@ -4,7 +4,7 @@
 
 @section('content.main')
   <div class="col-8">
-    <h3 class="title1-text primary-color text-left" style="margin-top:20px;">Listado de Candidatos</h3> <!--Presidente, Alcalde, Diputado, Sindico-->
+    <h3 class="title1-text primary-color text-left" style="margin-top:20px;">Listado de Candidatos</h3> <!--a Presidente, a Alcalde, a Diputado, a Sindico-->
     <div class="caja-listado">
       <div class="row text-center">
         <!--BLOQUE DEL CANDIDATO-->
