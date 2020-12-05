@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,20 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('validation');
+
+Route::view('/', 'validation')->name('index');
+
+Route::middleware('auth')->group(function() {
+    Route::view('/home', 'home')->name('home');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-Route::prefix('/login')->group (function(){
-    Route::view('/', 'login')->name('login');
-});
-
-Route::prefix('/home')->group (function(){
-    Route::view('/', 'home')->name('home');
-});
-
-Route::prefix('/candidatos')->group (function(){
-    Route::view('/', 'candidatos')->name('candidatos');
+Route::middleware('guest')->group(function() {
+    Route::get('/login', [AuthController::class, 'index'])->name('login');
+    Route::post('/login' , [AuthController::class, 'login']);
 });
 
 Route::prefix('/homeadministrator')->group (function(){
@@ -50,4 +48,7 @@ Route::prefix('/crudpuestos')->group (function(){
 });
 
 
+// Route::prefix('/candidatos')->group(function() {
+//     Route::view('/', 'candidatos')->name('candidatos');
+// });
 

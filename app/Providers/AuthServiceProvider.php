@@ -3,7 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Hash;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,6 +28,20 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Auth::viaRequest('admin-only', function() {
+            if(
+                Hash::check(
+                    env('ADMIN_USERNAME').':'.env('ADMIN_PASSWORD'),
+                    session('user'),
+                )
+            ) {
+                return [
+                    'id' => 0,
+                    'username' => env('ADMIN_PASSWORD'),
+                ];
+            }
+
+            return null;
+        });
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'validation')
+@section('title', 'ITLA Voting')
 
 @section('content')
 <header style="position:static;">
@@ -24,11 +24,11 @@
         <h5 class="title2-text">Escribe tu cédula</h5>
         <form class="needs-validation" novalidate>
           <div class="form-group">
-            <input type="tel" pattern="\d{3}-\d{7}-\d{1}" name="cedula" class="text-cedula mx-auto" required></input>  
+            <input type="tel" pattern="\d{3}-\d{7}-\d{1}" name="cedula" class="text-cedula mx-auto" required></input>
             <div class="valid-feedback">¡Excelente!</div>
             <div class="invalid-feedback">Formato invalido, el formato correcto es 000-0000000-0</div>
           </div>
-          <a class="btn btn-class" role="button" type="submit">Validar</a> 
+          <a class="btn btn-class" role="button" type="submit">Validar</a>
         </form>
       </div>
     </div>
@@ -44,7 +44,7 @@
             if(form.checkValidity() === false) {
               event.preventDefault();
               event.stopPropagation();
-              
+
             }
             alert('Hola');
             form.classList.add('was-validated');
