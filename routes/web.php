@@ -37,3 +37,17 @@ Route::prefix('/crudcandidatos')->group (function(){
     Route::view('/', 'crudcandidatos')->name('crudcandidatos');
 });
 
+Route::prefix('/crudciudadanos')->group (function(){
+    Route::view('/', 'crudciudadanos')->name('crudciudadanos');
+});
+
+Route::prefix('/crudpartidos')->group (function(){
+    Route::view('/', 'crudpartidos')->name('crudpartidos');
+});
+
+Route::prefix('/crudpuestos')->group (function(){
+    Route::view('/', 'crudpuestos')->name('crudpuestos');
+});
+
+
+
