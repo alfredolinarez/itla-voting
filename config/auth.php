@@ -37,7 +37,7 @@ return [
 
     'guards' => [
         'web' => [
-            'driver' => 'admin-only',
+            'driver' => 'custom-login',
             // 'provider' => 'users',
         ],
 

@@ -22,14 +22,19 @@ class AuthController extends Controller
         $password = $request->input('password');
 
         session([
-            'user' => Hash::make($username.':'.$password)
+            'user_hash' => Hash::make($username.':'.$password),
+            'username' => $username,
         ]);
 
-        // check credentials
-        if(Auth::check()) {
-            return redirect('home');
-        }
+        $user = Auth::user();
 
+        // check credentials
+        if($user['admin']) {
+            return redirect(route('admin.home'));
+        } else {
+            $request->session()->forget('user_hash');
+            $request->session()->forget('username');
+        }
 
         return view('login', [
             'login_failed' => true,
@@ -37,7 +42,8 @@ class AuthController extends Controller
     }
 
     public function logout(Request $request) {
-        $request->session()->forget('user');
+        $request->session()->forget('user_hash');
+        $request->session()->forget('username');
 
         return redirect('/');
     }

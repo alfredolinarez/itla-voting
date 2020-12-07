@@ -24,11 +24,11 @@
 
           <div class="form-group">
             <label for="username" class="title2-text">Usuario</label>
-            <input type="text" name="username" class="form-control"></input>
+            <input type="text" name="username" class="form-control" required></input>
           </div>
           <div class="form-group">
             <label for="password" class="title2-text">Contraseña</label>
-            <input type="password" name="password" class="form-control"></input>
+            <input type="password" name="password" class="form-control" required></input>
           </div>
           <div class="buttons1">
             <button class="btn btn-class">Login</button>

@@ -28,16 +28,21 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Auth::viaRequest('admin-only', function() {
-            if(
-                Hash::check(
-                    env('ADMIN_USERNAME').':'.env('ADMIN_PASSWORD'),
-                    session('user'),
-                )
-            ) {
+        Auth::viaRequest('custom-login', function() {
+            $creds = env('ADMIN_USERNAME').':'.env('ADMIN_PASSWORD');
+            $user_hash = session('user_hash');
+            $username = session('username');
+            if($user_hash && $username) {
+                if(Hash::check($creds, $user_hash)) {
+                    return [
+                        'username' => env('ADMIN_USERNAME'),
+                        'admin' => true,
+                    ];
+                }
+
                 return [
-                    'id' => 0,
-                    'username' => env('ADMIN_PASSWORD'),
+                    'username' => $username,
+                    'admin' => false,
                 ];
             }
 

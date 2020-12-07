@@ -12,23 +12,29 @@
     <div class="row content">
       <div class="col-md-12 align-self-center text-center ">
         <h2 class="primary-color title1-text">Bienvenido a ITLA VOTING</h2>
-        <!--ALERTA-->        
-        <!--<div class="alert alert-danger">Ya ha ejercido el voto</div>-->
-        
-        <!--ALERTA-->
-        <!--<div class="alert alert-danger">No hay ningun proceso electoral en estos momentos"</div>-->
 
-        <!--ALERTA-->
-        <!--<div class="alert alert-danger">El ciudadano está inactivo"</div>-->
+        @if($already_voted ?? '')
+          <div class="alert alert-danger">Ya ha ejercido el voto</div>
+        @endif
+
+        @if($no_active_election ?? '')
+          <div class="alert alert-danger">No hay ningun proceso electoral en estos momentos</div>
+        @endif
+
+        @if($inactive_citizen ?? '')
+          <div class="alert alert-danger">El ciudadano está inactivo</div>
+        @endif
 
         <h5 class="title2-text">Escribe tu cédula</h5>
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" action="{{ route('validate') }}" method="POST">
+          @csrf
+
           <div class="form-group">
             <input type="tel" pattern="\d{3}-\d{7}-\d{1}" name="cedula" class="text-cedula mx-auto" required></input>
             <div class="valid-feedback">¡Excelente!</div>
             <div class="invalid-feedback">Formato invalido, el formato correcto es 000-0000000-0</div>
           </div>
-          <a class="btn btn-class" role="button" type="submit">Validar</a>
+          <button class="btn btn-class" role="button" type="submit">Validar</button>
         </form>
       </div>
     </div>
@@ -44,9 +50,8 @@
             if(form.checkValidity() === false) {
               event.preventDefault();
               event.stopPropagation();
-
             }
-            alert('Hola');
+
             form.classList.add('was-validated');
           }, false);
         });
